@@ -15,10 +15,14 @@ The design of Zexus is guided by four main principles:
 Key Features (Solving Pain Points)
 Zexus directly tackles common frustrations in modern development:
  * Unified Stack: No more juggling five different languages for one app. Define your frontend, backend, database, and styling in one cohesive language.
+   
  * Verifiable Security: The language is designed to allow the compiler to mathematically prove that certain classes of bugs and security vulnerabilities are impossible, making your applications secure by default.
+   
  * Fearless Concurrency: Write code that runs in parallel on modern multi-core processors using simple keywords, without the complexity and bugs of traditional threading.
+   
  * Context-Aware State Management: Zexus automatically handles the flow of data between your UI and your backend, eliminating huge amounts of boilerplate code.
-Zexus in Action: Code Examples
+   
+# Zexus in Action: Code Examples
 Here’s a glimpse of what building with Zexus could look like.
 Web Development (Frontend & Backend)
 A single file can define a screen with multiple states (loading and form), handle user input, and call a secure backend action.
@@ -45,6 +49,8 @@ screen Login:
       on "success" (event): redirect_to(event.redirectURL)
       on "error" (event): display popup(message: event.message)
   }
+  
+  ------------------
 
 Database Definition
 Define your database schema, retention policies, and access rules in a simple, readable file.
@@ -62,6 +68,8 @@ database LocalUsers:
     allowed_access_from: "./auth_handler.zx"
     requires_secret: env("DB_ACCESS_KEY")
 
+    -------------------
+
 Smart Contracts (Blockchain)
 Zexus's focus on verifiable security makes it ideal for building safe smart contracts.
 # File: zexus_coin.zxc
@@ -75,6 +83,8 @@ verifiable entity ZexusCoin:
     balances[from] -= amount
     balances[to] += amount
     return success()
+    
+    --------------------
 
 Artificial Intelligence & Data Science
 Declaratively define and train complex AI models with ease.
@@ -92,6 +102,8 @@ let model = ai.vision_model {
 action trainModel:
   in parallel: model.train(on: dataset, epochs: 10)
 
+ ----------------
+
 Simple Scripting
 Automate simple tasks with clear, minimal code.
 # File: count_words.zx
@@ -100,6 +112,8 @@ use "filesystem"
 let document = filesystem.read_file("./my_document.txt")
 let wordCount = document.split(" ").count()
 print "The document has {wordCount} words."
+
+------------
 
 Basic Command Reference
 | Keyword / Concept | Purpose | Example |

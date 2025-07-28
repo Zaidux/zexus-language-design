@@ -68,7 +68,7 @@ database LocalUsers:
     allowed_access_from: "./auth_handler.zx"
     requires_secret: env("DB_ACCESS_KEY")
 
-    -------------------
+   -------------------
 
 Smart Contracts (Blockchain)
 Zexus's focus on verifiable security makes it ideal for building safe smart contracts.
@@ -84,7 +84,7 @@ verifiable entity ZexusCoin:
     balances[to] += amount
     return success()
     
-    --------------------
+   --------------------
 
 Artificial Intelligence & Data Science
 Declaratively define and train complex AI models with ease.
@@ -132,5 +132,6 @@ Basic Command Reference
 How to Contribute
 This project is in the early design phase. We welcome all ideas and contributions! Feel free to:
  * Open an Issue to discuss a new feature or ask a question.
+   
  * Fork the repository and submit a Pull Request with your proposed changes or additions to this document.
 Let's build the future of programming together!

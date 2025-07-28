@@ -31,7 +31,7 @@ A single file can define a screen with multiple states (loading and form), handl
 use backend "./auth_handler.zx"
 
 screen Login:
-  initial_state: :loading
+ initial_state: :loading
   
   state :loading {
     spinner { design: "looping circle" }
@@ -46,13 +46,13 @@ screen Login:
       }
       button "Login"
       
-      on "success" (event): redirect_to(event.redirectURL)
-      on "error" (event): display popup(message: event.message)
+   on "success" (event): redirect_to(event.redirectURL)
+   on "error" (event): display popup(message: event.message)
   }
   
   ------------------
 
-Database Definition
+# Database Definition
 Define your database schema, retention policies, and access rules in a simple, readable file.
 # File: main.zxdb
 
@@ -70,7 +70,7 @@ database LocalUsers:
 
    -------------------
 
-Smart Contracts (Blockchain)
+# Smart Contracts (Blockchain)
 Zexus's focus on verifiable security makes it ideal for building safe smart contracts.
 # File: zexus_coin.zxc
 
@@ -86,7 +86,7 @@ verifiable entity ZexusCoin:
     
    --------------------
 
-Artificial Intelligence & Data Science
+# Artificial Intelligence & Data Science
 Declaratively define and train complex AI models with ease.
 # File: image_classifier.zxai
 
@@ -104,7 +104,7 @@ action trainModel:
 
  ----------------
 
-Simple Scripting
+# Simple Scripting
 Automate simple tasks with clear, minimal code.
 # File: count_words.zx
 
@@ -115,7 +115,7 @@ print "The document has {wordCount} words."
 
 ------------
 
-Basic Command Reference
+# Basic Command Reference
 | Keyword / Concept | Purpose | Example |
 |---|---|---|
 | """ ... """ | Multi-line comment or file docstring. | """ This is my file. """ |

@@ -1,20 +1,5 @@
 # Date & Time Module
 
-The Zexus `DateTime` module provides a standard way to work with dates, times, and durations.
-
-## Creating a DateTime Object
-
-```zexus
-# Get the current date and time
-let now = DateTime.now()
-
-# Create a specific date
-let specificDate = DateTime.new(year: 2025, month: 7, day: 28)
-
-# Create a date and time
-let specificTime = DateTime.new(year: 2025, month: 7, day: 28, hour: 18, minute: 54)
-
-
 # Functions and Properties
 | Name | Purpose | Example |
 |---|---|---|
@@ -30,3 +15,20 @@ let durationUntilEvent = eventDate - today
 
 print "The event is on: {eventDate.format(as: "Day, Month DD, YYYY")}"
 print "There are {durationUntilEvent.to_days()} days until the event!"
+
+
+The Zexus `DateTime` module provides a standard way to work with dates, times, and durations.
+
+## Creating a DateTime Object
+
+```zexus
+# Get the current date and time
+let now = DateTime.now()
+
+# Create a specific date
+let specificDate = DateTime.new(year: 2025, month: 7, day: 28)
+
+# Create a date and time
+let specificTime = DateTime.new(year: 2025, month: 7, day: 28, hour: 18, minute: 54)
+
+

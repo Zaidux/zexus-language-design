@@ -129,7 +129,27 @@ print "The document has {wordCount} words."
 | entity | Defines the structure of data. | entity User { name: text } |
 | if / else | Executes code based on a condition. | if user: print "Welcome" |
 | for each | Loops over a list of items. | for each user in allUsers: print user.name |
-How to Contribute
+
+## Command-Line Tools (`zx` & `zpm`)
+
+To interact with the Zexus language and manage projects, you'll use two simple command-line tools:
+
+* **`zx`**: The Zexus runner. This command is used to execute your `.zx` files.
+    ```bash
+    # Run the main application file
+    zx main.zx
+    ```
+* **`zpm`**: The Zexus Package Manager. This tool is used to install, manage, and publish Zexus libraries.
+    ```bash
+    # Install a library from the central repository
+    zpm install CoolUI
+
+    # Publish your own library
+    zpm publish
+    ```
+    
+
+## How to Contribute
 This project is in the early design phase. We welcome all ideas and contributions! Feel free to:
  * Open an Issue to discuss a new feature or ask a question.
    

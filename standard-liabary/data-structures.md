@@ -7,7 +7,8 @@ A **`List`** is an ordered collection of items. It is the most common way to sto
 
 ### Creation
 ```zexus
-# A list of strings
+
+A list of strings
 let names = ["Zaidu", "Gemini", "Alex"]
 
 # A list of numbers

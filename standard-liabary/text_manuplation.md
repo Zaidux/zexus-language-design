@@ -12,7 +12,8 @@ This includes:
 | .split(by:) | Splits the text into a List of strings using a delimiter. | let words = "one,two,three".split(by: ",") # ["one", "two", "three"] |
 | .is_empty() | Returns true if the text has no characters. | let empty = "".is_empty() # true |
 
-* Example in Action
+
+# Example in Action
 Here’s how a developer could use these functions together to clean up user input:
 # Imagine this is input from a user form
 let rawComment = "  WOW, zexus is AWESOME!  "

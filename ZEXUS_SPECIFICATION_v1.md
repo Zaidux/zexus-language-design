@@ -221,8 +221,45 @@ zpm install CoolUI
 
 ---
 
-7. Appendix: Formal Grammar (EBNF)
+## 7. Appendix: Formal Grammar (EBNF)
+This section provides a simplified formal grammar for Zexus v1.0. It is intended as a guide for building a parser for the language.
+Notation:
+ * ::= means "is defined as".
+ * | means "or".
+ * * means "zero or more times".
+ * ? means "optional" (zero or one time).
+ * Items in quotes (e.g., "let") are literal keywords.
+Core Structure
+program ::= statement*
+statement ::= declaration | control_flow | expression | comment
 
-This section outlines the formal grammar for Zexus using EBNF (Extended Backus-Naur Form). More rules will be added in future versions.
+Declarations
+declaration ::= variable_declaration | screen_declaration | action_declaration
 
-variable_declaration ::= "let" , identifier , "=" , expression ;
+variable_declaration ::= "let" , identifier , "=" , expression
+screen_declaration ::= "screen" , identifier , ":" , screen_body
+action_declaration ::= "async"? , "action" , identifier , "(" , parameter_list? , ")" , ":" , code_block
+
+Control Flow
+control_flow ::= if_statement | for_loop
+
+if_statement ::= "if" , expression , ":" , code_block , ("else" , ":" , code_block)?
+for_loop ::= "for" , "each" , identifier , "in" , identifier , ":" , code_block
+
+Module System
+module_statement ::= use_statement | export_statement
+
+use_statement ::= "use" , (identifier | "{" , identifier_list , "}") , "from" , string_literal
+export_statement ::= "export" , ("default" , identifier | "{" , identifier_list , "}")
+
+Error Handling
+error_statement ::= try_catch_statement | throw_statement
+
+try_catch_statement ::= "try" , ":" , code_block , "catch" , "(" , identifier , ")" , ":" , code_block
+throw_statement ::= "throw" , expression
+
+Basic Expressions & Literals
+expression ::= literal | identifier | function_call | arithmetic_expression
+
+literal ::= string_literal | number_literal | boolean_literal
+identifier ::= (letter | "_") , (letter | number | "_")*

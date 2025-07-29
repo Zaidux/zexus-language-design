@@ -15,6 +15,7 @@ let scores = [95, 88, 100]
 
 # An empty list that will hold User entities
 let users: List<User> = []
+```
 
 Functions
 | Function | Purpose | Example |
@@ -28,8 +29,13 @@ Functions
 | .map(transform: ...) | [cite_start]Creates a new list by applying a function to each item. [cite: 33] | let upper = names.map(transform: it.to_uppercase()) |
 | .filter(condition: ...) | [cite_start]Creates a new list with only the items that pass a condition. [cite: 33] | let highScores = scores.filter(condition: it > 90) |
 | .reduce(initial, logic: ...) | [cite_start]Reduces the list to a single value by combining items. [cite: 33] | let total = scores.reduce(0, logic: accumulator + item) |
-Map
+
+
+# Map
+
 A Map is a collection of key-value pairs. It is used to store associated data, where each value is linked to a unique key.
+
+```zexus
 Creation
 # A map representing a user's profile
 let userProfile = {
@@ -40,6 +46,7 @@ let userProfile = {
 
 # An empty map that will hold scores
 let playerScores: Map<String, Integer> = {}
+```
 
 Functions
 | Function | Purpose | Example |

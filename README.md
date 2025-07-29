@@ -79,6 +79,7 @@ screen Login:
       on "success" (event): redirect_to(event.redirectURL)
       on "error" (event): display popup(message: event.message)
   }
+```
 
 
 ---
@@ -87,6 +88,7 @@ screen Login:
 
 🗃️ Database Definition
 
+```zexus
 # File: main.zxdb
 
 database LocalUsers:
@@ -100,7 +102,7 @@ database LocalUsers:
   permissions:
     allowed_access_from: "./auth_handler.zx"
     requires_secret: env("DB_ACCESS_KEY")
-
+```
 
 ---
 
@@ -108,6 +110,7 @@ database LocalUsers:
 
 ⛓️ Smart Contracts (Blockchain)
 
+```zexus
 # File: zexus_coin.zxc
 
 verifiable entity ZexusCoin:
@@ -119,7 +122,7 @@ verifiable entity ZexusCoin:
     balances[from] -= amount
     balances[to] += amount
     return success()
-
+```
 
 ---
 
@@ -127,6 +130,7 @@ verifiable entity ZexusCoin:
 
 🧠 AI & Data Science
 
+```zexus
 # File: image_classifier.zxai
 
 use "zexus_ai_kit"
@@ -141,6 +145,7 @@ let model = ai.vision_model {
 action trainModel:
   in parallel: model.train(on: dataset, epochs: 10)
 
+```
 
 ---
 
@@ -148,6 +153,7 @@ action trainModel:
 
 🧾 Simple Scripting
 
+```zexus
 # File: count_words.zx
 
 use "filesystem"
@@ -155,6 +161,7 @@ let document = filesystem.read_file("./my_document.txt")
 let wordCount = document.split(" ").count()
 print "The document has {wordCount} words."
 
+```
 
 ---
 

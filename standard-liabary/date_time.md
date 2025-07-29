@@ -18,6 +18,7 @@ let specificDate = DateTime.new(year: 2025, month: 7, day: 28)
 
 # [span_1](start_span)Create a date and time with an explicit timezone[span_1](end_span)
 let tokyoTime = DateTime.new(year: 2025, hour: 10, timezone: "Asia/Tokyo")
+```
 
 Functions and Properties
 | Name | Purpose | Example |

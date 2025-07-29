@@ -170,7 +170,7 @@ print "The document has {wordCount} words."
 Keyword / Concept	Purpose	Example
 
 """ ... """	Multi-line comment or docstring	""" This is my file. """
-#	Single-line comment	# This is a comment
+"#"	Single-line comment	# This is a comment
 use	Import file or library	use "./colors.zx"
 let	Declare variable	let appName = "Zexus"
 screen	UI container/page	screen Login: ...

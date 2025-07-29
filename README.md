@@ -50,7 +50,7 @@ The design of Zexus is guided by four main principles:
 
 ### 🌐 Web Development (Frontend + Backend)
 
-
+```zexus
 # File: login_screen.zx
 
 use backend "./auth_handler.zx"

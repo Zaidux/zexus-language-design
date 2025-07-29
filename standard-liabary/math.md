@@ -1,6 +1,12 @@
 # Math Module
 
-The Zexus `Math` module provides a standard set of essential mathematical functions. All functions are accessed through the `Math` namespace.
+The Zexus `Math` module provides a standard set of essential mathematical functions and constants. All functions are accessed through the `Math` namespace.
+
+## Constants
+
+| Constant  | Purpose             | Example              |
+| --------- | ------------------- | -------------------- |
+| `Math.PI` | The value of Pi (π). | `let circ = 2 * Math.PI * r` |
 
 ## Functions
 
@@ -11,23 +17,7 @@ The Zexus `Math` module provides a standard set of essential mathematical functi
 | `Math.random()`                   | Returns a random decimal number between 0.0 and 1.0.    | `Math.random()` # e.g., 0.734...            |
 | `Math.random_int(min, max)`       | Returns a random integer within a specified range.      | `Math.random_int(1, 100)` # e.g., 42        |
 | `Math.round(number)`              | Rounds a number to the nearest integer.                 | `Math.round(5.7)` # Returns 6               |
-| `Math.floor(number)`              | Rounds a number down to the nearest integer.            | `Math.floor(5.7)` # Returns 5               |
-| `Math.ceil(number)`               | Rounds a number up to the nearest integer.              | `Math.ceil(5.2)` # Returns 6                |
 | `Math.abs(number)`                | Returns the absolute (non-negative) value of a number.  | `Math.abs(-15)` # Returns 15                |
-
-## Example Usage
-
-```zexus
-# Simulate a dice roll for a game
-let diceRoll = Math.random_int(1, 6)
-print "You rolled a {diceRoll}!"
-
-# Calculate damage with a random critical hit chance
-let baseDamage = 50
-let criticalHit = Math.random() > 0.8 # 20% chance for a critical hit
-
-if criticalHit:
-  let totalDamage = Math.round(baseDamage * 1.5)
-  print "Critical Hit! Damage: {totalDamage}"
-else:
-  print "Normal Hit. Damage: {baseDamage}"
+| **`Math.sin(angle)`** | Calculates the sine of an angle (in radians).           | `Math.sin(Math.PI / 2)` # Returns 1.0       |
+| **`Math.cos(angle)`** | Calculates the cosine of an angle (in radians).         | `Math.cos(Math.PI)` # Returns -1.0          |
+| **`Math.tan(angle)`** | Calculates the tangent of an angle (in radians).        | `Math.tan(0)` # Returns 0.0                 |

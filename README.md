@@ -167,19 +167,20 @@ print "The document has {wordCount} words."
 
 🧮 Basic Command Reference
 
-Keyword / Concept	Purpose	Example
+Keyword| Concept| 	Purpose	Example |
+|---|---|---|
 
 """ ... """|	Multi-line comment or docstring	|""" This is my file. """
-"#"	|Single-line comment	|# This is a comment
-use	|Import file or library	|use "./colors.zx"
-let	|Declare variable	|let appName = "Zexus"
-screen	|UI container/page	screen| Login: ...
-state	|A state inside a screen	|state :loading { ... }
-action|	A function block	|action loginUser(): ...
-database	|Declare a database	|database LocalUsers: ...
-entity|	Define a data model	|entity User { name: text }
-if / else	|Conditional logic|	if user: print "Hi"
-for each	Loop through list	for each u in users: print u
+"#"	| Single-line comment	| # This is a comment |
+use	| Import file or library	| use "./colors.zx"|
+let	|Declare variable	|let appName = "Zexus"|
+screen	|UI container/page	screen| Login: ...|
+state	| A state inside a screen	|state :loading { ... } |
+action |	A function block	|action loginUser(): ... |
+database	|Declare a database	|database LocalUsers: ... |
+entity |	Define a data model	|entity User { name: text } |
+if / else	| Conditional logic|	if user: print "Hi" |
+for each	Loop through list	for each u in users: print u |
 
 
 

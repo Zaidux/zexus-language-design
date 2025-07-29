@@ -7,8 +7,7 @@ A **`List`** is an ordered collection of items. It is the most common way to sto
 
 ### Creation
 ```zexus
-
-A list of strings
+# A list of strings
 let names = ["Zaidu", "Gemini", "Alex"]
 
 # A list of numbers
@@ -23,9 +22,12 @@ Functions
 | .add(item) | Adds an item to the end of the list. | names.add("Chris") |
 | .remove(item) | Removes the first matching item from the list. | scores.remove(88) |
 | .count() | Returns the number of items in the list. | let numUsers = names.count() |
+| .is_empty() | Returns true if the list has no items. | if users.is_empty(): print "No users yet." |
 | .find(where: ...) | Finds the first item that matches a condition. | let gemini = names.find(where: it == "Gemini") |
 | .sort() | Sorts the list. | scores.sort() |
-| .is_empty() | Returns true if the list has no items. | if users.is_empty(): print "No users yet." |
+| .map(transform: ...) | [cite_start]Creates a new list by applying a function to each item. [cite: 33] | let upper = names.map(transform: it.to_uppercase()) |
+| .filter(condition: ...) | [cite_start]Creates a new list with only the items that pass a condition. [cite: 33] | let highScores = scores.filter(condition: it > 90) |
+| .reduce(initial, logic: ...) | [cite_start]Reduces the list to a single value by combining items. [cite: 33] | let total = scores.reduce(0, logic: accumulator + item) |
 Map
 A Map is a collection of key-value pairs. It is used to store associated data, where each value is linked to a unique key.
 Creation

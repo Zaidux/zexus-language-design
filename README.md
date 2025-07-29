@@ -50,7 +50,7 @@ The design of Zexus is guided by four main principles:
 
 ### 🌐 Web Development (Frontend + Backend)
 
-```zexus
+
 # File: login_screen.zx
 
 use backend "./auth_handler.zx"
@@ -83,7 +83,7 @@ screen Login:
 
 ---
 
-```zexus
+
 
 🗃️ Database Definition
 
@@ -104,7 +104,7 @@ database LocalUsers:
 
 ---
 
-```zexus
+
 
 ⛓️ Smart Contracts (Blockchain)
 
@@ -123,7 +123,7 @@ verifiable entity ZexusCoin:
 
 ---
 
-```zexus
+
 
 🧠 AI & Data Science
 
@@ -144,7 +144,7 @@ action trainModel:
 
 ---
 
-```zexus
+
 
 🧾 Simple Scripting
 
@@ -155,7 +155,7 @@ let document = filesystem.read_file("./my_document.txt")
 let wordCount = document.split(" ").count()
 print "The document has {wordCount} words."
 
-```zexus
+
 ---
 
 🧮 Basic Command Reference

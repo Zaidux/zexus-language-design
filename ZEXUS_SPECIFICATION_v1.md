@@ -1,28 +1,43 @@
-## Zexus Language Specification v1.0
+# Zexus Language Specification v1.0
 
-This document provides the official language specification for Zexus Version 1.0. It serves as the definitive guide for developers, contributors, and implementers of the Zexus language.
+This document provides the official language specification for **Zexus Version 1.0**. It serves as the definitive guide for developers, contributors, and implementers of the Zexus language.
 
-* 1. Introduction
+---
+
+## 1. Introduction
+
 Zexus is a high-level, declarative programming language designed to unify modern application development. Its core philosophy is to make coding intuitive, readable, and powerful by allowing developers to state what they want to achieve, while the language handles the complex implementation details.
 
-# 1.1. Core Principles
+---
+
+### 1.1 Core Principles
+
 The design of Zexus is guided by four main principles:
 
- * Natural Language First: Syntax consists of readable words, not cryptic symbols, making code easy to write and understand.
+- **Natural Language First**  
+  Syntax consists of readable words, not cryptic symbols, making code easy to write and understand.
 
- * Declarative & Intent-Based: Focus on the "what," not the "how." Describe your desired end state, and let the language handle the implementation.
+- **Declarative & Intent-Based**  
+  Focus on the *what*, not the *how*. Describe your desired end state, and let the language handle the implementation.
 
- * Context is King: The compiler is smart. It understands whether you're defining UI, backend logic, security rules, or data, and adapts accordingly.
+- **Context is King**  
+  The compiler is smart. It understands whether you're defining UI, backend logic, security rules, or data, and adapts accordingly.
 
- * Everything is a Module: Every file, library, and component is a self-contained, pluggable module, promoting clean and organized code.
+- **Everything is a Module**  
+  Every file, library, and component is a self-contained, pluggable module, promoting clean and organized code.
 
-* 2. Language Syntax & Semantics
+---
 
-2.1. Comments
+## 2. Language Syntax & Semantics
+
+### 2.1 Comments
+
 Comments are used to leave notes in the code and are ignored by the compiler.
- * Single-line comments start with #.
- * Multi-line comments or docstrings are enclosed in """ ... """.
-<!-- end list -->
+
+- Single-line comments start with `#`.
+- Multi-line comments (docstrings) are enclosed in `""" ... """`.
+
+```zexus
 # This is a single-line comment.
 
 """
@@ -30,27 +45,45 @@ This is a multi-line docstring,
 often used at the top of a file for documentation.
 """
 
-* 2.2. Variables
+
+---
+
+2.2 Variables
+
 Variables are declared using the let keyword.
+
 let message = "Hello, Zexus!"
 let userCount = 50
 
-* 2.3. Control Flow
-Zexus uses standard if/else blocks for conditional logic.
+
+---
+
+2.3 Control Flow
+
+Zexus uses standard if/else blocks for conditional logic:
+
 if user.isLoggedIn:
   print "Welcome back!"
 else:
   print "Please log in."
 
-Loops are handled with a readable for each syntax.
+Loops are handled with a readable for each syntax:
+
 for each user in allUsers:
   print user.name
 
-* 2.4. UI and Components
+
+---
+
+2.4 UI and Components
+
 The user interface is defined using screen and component blocks.
- * A screen represents a full page or view and can contain different states.
- * A component is a reusable piece of UI.
-<!-- end list -->
+
+A screen represents a full page or view and can contain different states.
+
+A component is a reusable piece of UI.
+
+
 screen Login:
   initial_state: :form
 
@@ -58,24 +91,41 @@ screen Login:
     # ... form content ...
   }
 
-* 2.5. Actions
-Backend logic or complex frontend operations are defined in action blocks. Actions can be async and use await for operations that take time.
+
+---
+
+2.5 Actions
+
+Backend logic or complex frontend operations are defined in action blocks. Actions can be async and use await.
+
 action fetchUserData(userId):
   let response = await http.get("/api/users/{userId}")
   return response.json()
 
-* 2.6. Data and Databases
-Data structures are defined using entity. A database schema is defined within a database block.
+
+---
+
+2.6 Data and Databases
+
+Data structures are defined using entity. Database schemas are defined in a database block.
+
 database UserDB:
   entity User:
     username: text
     email: email_string
 
-* 3. Module System
-The module system allows code to be organized into separate files via export and use.
- * export: Makes functions, components, etc., available to other files. Can be named or default.
- * use: Imports code from another file.
-<!-- end list -->
+
+---
+
+3. Module System
+
+Zexus organizes code into separate files using export and use.
+
+export: Makes functions, components, etc., available to other files.
+
+use: Imports code from another file.
+
+
 # File: utils.zx
 action doSomething: print "Done."
 export { doSomething }
@@ -84,8 +134,13 @@ export { doSomething }
 use { doSomething } from "./utils.zx"
 doSomething()
 
-* 4. Error Handling
-Zexus uses a try/catch mechanism for robust error handling. The throw keyword is used to trigger custom errors.
+
+---
+
+4. Error Handling
+
+Zexus uses a try/catch mechanism for robust error handling. Use throw to trigger custom errors.
+
 entity MyError { message: text }
 
 try:
@@ -94,37 +149,80 @@ try:
 catch (error: MyError):
   print "Caught a specific error: {error.message}"
 
-* 5. The Standard Library
-The Zexus Standard Library provides a built-in toolkit for common tasks.
 
-* 5.1. Data Structures (List & Map)
- * List: An ordered collection of items. ["a", "b", "c"]
- * Map: A collection of key-value pairs. {"name": "Zaidu", "level": 10}
+---
 
-* 5.2. Text Manipulation (Text)
-Provides functions on text variables, such as .length(), .to_uppercase(), .trim(), and .split(by:).
+5. The Standard Library
 
-* 5.3. Math (Math)
-A module for common mathematical operations, accessed via the Math namespace (e.g., Math.sqrt(16)).
+The Zexus Standard Library includes core utilities for various tasks.
 
-* 5.4. Date & Time (DateTime)
-A module for handling dates and times. Get the current time with DateTime.now() or create a new date with DateTime.new(...).
+5.1 Data Structures (List & Map)
 
-* 5.5. Filesystem (filesystem)
-A module for interacting with local files, providing functions like filesystem.read_text(path) and filesystem.write_text(path, content).
+List: An ordered collection of items.
 
-* 5.6. Networking (http)
-A module for making web requests, such as http.get(url) and http.post(url, body). These are async operations and must be used with await.
+Map: A key-value collection.
 
-* 6. Command-Line Tools
-Interaction with the Zexus ecosystem is handled by two command-line tools.
- * zx: The Zexus runner, used to execute .zx files.
-   zx main.zx
 
- * zpm: The Zexus Package Manager, used to install and manage libraries.
-   zpm install CoolUI
+["a", "b", "c"]
+{"name": "Zaidu", "level": 10}
 
-* 7. Appendix: Formal Grammar (EBNF)
-This section provides a formal, technical definition of the language syntax for compiler developers. The grammar will be fully detailed in future revisions.
-Example Rule:
+5.2 Text Manipulation (Text)
+
+Text utilities available on text values:
+
+text.length()
+text.to_uppercase()
+text.trim()
+text.split(by: ",")
+
+5.3 Math (Math)
+
+Common math operations via the Math namespace:
+
+Math.sqrt(16)
+
+5.4 Date & Time (DateTime)
+
+Handle dates and time easily:
+
+DateTime.now()
+DateTime.new("2025-07-29T12:00:00Z")
+
+5.5 Filesystem (filesystem)
+
+Read/write local files:
+
+filesystem.read_text("/data/file.txt")
+filesystem.write_text("/data/file.txt", "Hello Zexus")
+
+5.6 Networking (http)
+
+Make web requests. These are async and require await.
+
+let result = await http.get("https://api.example.com/data")
+
+
+---
+
+6. Command-Line Tools
+
+Interaction with the Zexus ecosystem is handled via:
+
+zx — The Zexus runner for executing .zx files.
+
+
+zx main.zx
+
+zpm — The Zexus Package Manager for installing and managing libraries.
+
+
+zpm install CoolUI
+
+
+---
+
+7. Appendix: Formal Grammar (EBNF)
+
+This section outlines the formal grammar for Zexus using EBNF (Extended Backus-Naur Form). More rules will be added in future versions.
+
 variable_declaration ::= "let" , identifier , "=" , expression ;

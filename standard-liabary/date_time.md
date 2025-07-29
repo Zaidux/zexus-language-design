@@ -32,6 +32,7 @@ Example Usage
 let eventDate = DateTime.new(year: 2026, month: 1, day: 1, hour: 12, timezone: "America/New_York")
 let today = DateTime.now()
 
+```zexus
 # Convert the event time to the user's local timezone
 let eventLocal = eventDate.to_timezone("local")
 

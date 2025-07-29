@@ -13,21 +13,19 @@ The Zexus `Filesystem` module provides a standard interface for interacting with
 | `filesystem.delete(path)`         | Deletes the file or directory at the given path.                 |
 | `filesystem.list_files(path)`     | Returns a `List` of file and directory names inside a given path. |
 
-## Example Usage
+## Error Handling
+Filesystem operations can often fail due to issues like a file not being found or a lack of permissions. All functions that can fail (like `read_text`, `write_text`, etc.) will **throw an error**. It is best practice to wrap these calls in a `try/catch` block.
+
+### Example Usage
 
 ```zexus
-# Define paths
 let configFile = "./config.txt"
-let logFile = "./app.log"
 
-# Check if a config file exists and read from it
-if filesystem.exists(configFile):
+# Use a try/catch block to handle potential errors
+try:
   let configContent = filesystem.read_text(configFile)
-  print "Configuration loaded."
-  
-  # Append a log message to the log file
-  let now = DateTime.now().format(as: "YYYY-MM-DD HH:mm:ss")
-  filesystem.append_text(logFile, "[{now}] Application started successfully.\n")
-else:
-  # Write a default log message if no config is found
-  filesystem.write_text(logFile, "No config file found. Running with defaults.\n")
+  print "Configuration loaded successfully."
+catch (error: FileNotFoundError):
+  print "Error: The config file was not found. Using default settings."
+catch (error: PermissionError):
+  print "Error: Do not have permission to read the config file."

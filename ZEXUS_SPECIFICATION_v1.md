@@ -221,7 +221,7 @@ zpm install CoolUI
 
 ---
 
-## 7. Appendix: Formal Grammar (EBNF)
+# 7. Appendix: Formal Grammar (EBNF)
 This section provides a simplified formal grammar for Zexus v1.0. It is intended as a guide for building a parser for the language.
 Notation:
  * ::= means "is defined as".

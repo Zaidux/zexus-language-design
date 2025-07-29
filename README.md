@@ -83,6 +83,8 @@ screen Login:
 
 ---
 
+```zexus
+
 🗃️ Database Definition
 
 # File: main.zxdb
@@ -102,6 +104,8 @@ database LocalUsers:
 
 ---
 
+```zexus
+
 ⛓️ Smart Contracts (Blockchain)
 
 # File: zexus_coin.zxc
@@ -118,6 +122,8 @@ verifiable entity ZexusCoin:
 
 
 ---
+
+```zexus
 
 🧠 AI & Data Science
 
@@ -138,6 +144,8 @@ action trainModel:
 
 ---
 
+```zexus
+
 🧾 Simple Scripting
 
 # File: count_words.zx
@@ -147,7 +155,7 @@ let document = filesystem.read_file("./my_document.txt")
 let wordCount = document.split(" ").count()
 print "The document has {wordCount} words."
 
-
+```zexus
 ---
 
 🧮 Basic Command Reference

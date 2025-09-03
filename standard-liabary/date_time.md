@@ -1,6 +1,6 @@
 ### Updated `date_time.md`
 
-[span_0](start_span)This version adds timezone support to the `DateTime` module, a crucial feature for real-world applications[span_0](end_span).
+(start_span)This version adds timezone support to the `DateTime` module, a crucial feature for real-world applications.
 
 ```markdown
 # Date & Time Module
@@ -16,7 +16,7 @@ let now = DateTime.now()
 # Create a specific date, assumed to be in the local timezone unless specified
 let specificDate = DateTime.new(year: 2025, month: 7, day: 28)
 
-# [span_1](start_span)Create a date and time with an explicit timezone[span_1](end_span)
+# Create a date and time with an explicit timezone
 let tokyoTime = DateTime.new(year: 2025, hour: 10, timezone: "Asia/Tokyo")
 ```
 

@@ -27,13 +27,17 @@ Functions and Properties
 | .hour, .minute, .second | Gets a specific component of the time. | let hour = specificTime.hour |
 | .format(as: ...) | Formats the date into a human-readable text string. | now.format(as: "YYYY-MM-DD") |
 | .to_timezone(tz) | [cite_start]Converts the DateTime object to a different timezone. [cite: 36] | let localTime = tokyoTime.to_timezone("local") |
-| (date1 - date2) | Subtracting dates creates a Duration object. | let timePassed = DateTime.now() - specificDate |
+| (date1 - date2) | Subtracting dates creates a Duration object. | let timePassed = DateTime.now() - specificDate 
+
+
+``` zexus
 Example Usage
 let eventDate = DateTime.new(year: 2026, month: 1, day: 1, hour: 12, timezone: "America/New_York")
 let today = DateTime.now()
 
-```zexus
+
 # Convert the event time to the user's local timezone
 let eventLocal = eventDate.to_timezone("local")
 
 print "The event is on: {eventLocal.format(as: "Day, Month DD, YYYY at h:mm a")}"
+```
